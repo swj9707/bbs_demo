@@ -7,13 +7,16 @@ import com.example.bbs_demo.dto.PageResultDTO;
 import com.example.bbs_demo.entity.Board;
 import com.example.bbs_demo.entity.Member;
 import com.example.bbs_demo.repository.BoardRepository;
+import com.example.bbs_demo.repository.ReplyRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 @Service
@@ -23,6 +26,9 @@ public class BoardServiceImpl implements BoardService{
 
     @Autowired
     private BoardRepository boardRepository;
+
+    @Autowired
+    private ReplyRepository replyRepository;
 
     @Override
     public Long register(BoardDTO dto){
@@ -52,6 +58,24 @@ public class BoardServiceImpl implements BoardService{
         Object[] arr = (Object[]) result;
 
         return entityToDTO((Board) arr[0], (Member) arr[1], (Long) arr[2]);
+    }
+
+    @Transactional
+    @Override
+    public void removeWithReplies(Long bno){
+        replyRepository.deleteByBno(bno);
+        boardRepository.deleteById(bno);
+    }
+
+    @Override
+    public void modify(BoardDTO boardDTO){
+        Optional<Board> optionalBoard = boardRepository.findById(boardDTO.getBno());
+        Board board = optionalBoard.get();
+
+        board.changeTitle(boardDTO.getTitle());
+        board.changeContent(boardDTO.getContent());
+
+        boardRepository.save(board);
     }
 
 }

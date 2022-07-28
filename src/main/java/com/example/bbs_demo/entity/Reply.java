@@ -2,17 +2,14 @@ package com.example.bbs_demo.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "board")
 public class Reply extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +18,7 @@ public class Reply extends BaseEntity{
     private String text;
 
     private String replyer;
+
+    @ManyToOne
+    private Board board;
 }

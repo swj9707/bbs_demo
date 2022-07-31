@@ -1,5 +1,7 @@
 # bbs_demo
 
+<img width="806" alt="image" src="https://user-images.githubusercontent.com/36991763/182017907-cb879983-7ae8-423e-87e2-f9beeaf0539e.png">
+
 # Intro
 2022 가온누리 JAVA 서버 스터디 실습 프로젝트
 Spring Boot 를 활용한 전자 게시판 실습
@@ -12,6 +14,22 @@ Spring Boot 를 활용한 전자 게시판 실습
 - 사용자는 등록 된 글의 댓글을 수정 및 삭제 할 수 있어야 한다. 
 - 사용자는 등록 된 글을 조건에 맞게 검색 할 수 있어야 한다.
 - 사용자는 등록 된 글을 한 페이지 당 10개 씩 볼 수 있어야 한다. 
+
+
+# 기술 스택
+- Spring Boot
+  - JPA
+  - QueryDSL
+  - JPQL
+  - Thymeleaf
+- DBMS
+  - MariaDB
+  - DBeaver
+- View
+  - Bootstrap
+  - Javascript
+    - JQuery
+    - Ajax
 
 # API 규격서
 
@@ -88,21 +106,6 @@ board와 reply 사이엔 일대다 관계 (reply의 외래키는 board_bno <-> b
 <img width="346" alt="image" src="https://user-images.githubusercontent.com/36991763/182018011-12dfbdd5-f4e7-42c6-aa1a-309c22342b74.png">
 
 <img width="436" alt="image" src="https://user-images.githubusercontent.com/36991763/182018016-4ae85a10-d49e-49ee-a289-348741a1e1b5.png">
-
-# 기술 스택
-- Spring Boot
-  - JPA
-  - QueryDSL
-  - JPQL
-  - Thymeleaf
-- DBMS
-  - MariaDB
-  - DBeaver
-- View
-  - Bootstrap
-  - Javascript
-    - JQuery
-    - Ajax
 
 # Reference
 - 코드로 배우는 스프링 부트 웹 프로젝트

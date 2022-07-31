@@ -101,7 +101,7 @@ board와 reply 사이엔 일대다 관계 (reply의 외래키는 board_bno <-> b
 - View
   - Bootstrap
 
-# Reerence
+# Reference
 - 코드로 배우는 스프링 부트 웹 프로젝트
   - 개선 사항
     - 디자인 개선

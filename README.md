@@ -11,6 +11,12 @@
 
 # API 규격서
 
+|URL|METHOD|파라미터|설명|
+|---|------|----|----|
+|localhost:8080/board/list|GET|pageRequest (page, size, type, keyword)|파라미터 값에 맞는 페이지의 게시물 데이터 출력|
+
+
+
 # 엔티티 관계도
 
 # 개발 방법

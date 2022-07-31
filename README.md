@@ -32,8 +32,10 @@ Spring Boot 를 활용한 전자 게시판 실습
 
 
 # 엔티티 관계도
-<img width="227" alt="image" src="https://user-images.githubusercontent.com/36991763/182017654-d152241b-ea03-46e0-9acf-23a9bfa35115.png">  
+<img width="379" alt="image" src="https://user-images.githubusercontent.com/36991763/182018548-d3fa2506-17d1-4622-888f-397c8b6603f2.png">  
+
 member 와 board 사이엔 일대다 관계 (board의 외래키는 writer_email <-> member의 email)  
+
 board와 reply 사이엔 일대다 관계 (reply의 외래키는 board_bno <-> board의 bno)  
 
 # 개발 과정
@@ -47,7 +49,7 @@ board와 reply 사이엔 일대다 관계 (reply의 외래키는 board_bno <-> b
 - Feature
   - 기능 구현 브랜치
 ### Source Tree 캡쳐 이미지
-<img width="430" alt="image" src="https://user-images.githubusercontent.com/36991763/182017791-21ebea6d-002e-4e7a-8deb-3593017ad084.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/36991763/182017791-21ebea6d-002e-4e7a-8deb-3593017ad084.png">
 
 # 구현 기능
 ## 1. 메인 화면

@@ -57,7 +57,7 @@ member 와 board 사이엔 일대다 관계 (board의 외래키는 writer_email 
 board와 reply 사이엔 일대다 관계 (reply의 외래키는 board_bno <-> board의 bno)  
 
 # 개발 과정
-## Git model
+## Git flow model
 - Master
   - 최종 릴리즈 브랜치
 - Dev
